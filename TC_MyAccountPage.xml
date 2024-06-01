@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="My Account" verbose="8" thread-count="5" parallel="tests">
+    <listeners>
+        <listener class-name="Utilities.ExtentListener"/>
+    </listeners>
+    <test
+            name="TC_MyAccountPage">
+        <classes>
+            <class name="TestCases.TC_MyAccountPage"/>
+        </classes>
+    </test>
+
+</suite>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Login Functionality" verbose="10" parallel="tests" preserve-order="true" thread-count="2">
+    <listeners>
+        <listener class-name="Utilities.ExtentListener"/>
+    </listeners>
+    <test name="TC_VerifyLogin">
+        <classes>
+            <class name="TestCases.TC_VerifyLogin">
+            </class>
+        </classes>
+    </test>
+</suite>
