@@ -14,6 +14,12 @@ public class IndexPage {
         PageFactory.initElements(rDriver, this);
     }
 
+    @FindBy(xpath = "//a[@title='Women']")
+    WebElement WOMEN;
+
+    @FindBy(xpath = "//a[@title='Evening Dresses']")
+    WebElement EVENING_DRESS;
+
 
     @FindBy(xpath = "//a[@class='login'] ")
     WebElement signIn;
@@ -22,4 +28,13 @@ public class IndexPage {
     public void clickSignIn() {
         signIn.click();
     }
+
+    public void clickWomen() {
+        WOMEN.click();
+    }
+
+    public void clickEveningDress() {
+        EVENING_DRESS.click();
+    }
+
 }

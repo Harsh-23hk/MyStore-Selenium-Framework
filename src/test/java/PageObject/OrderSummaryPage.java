@@ -5,15 +5,15 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class OrderAddressPage {
+public class OrderSummaryPage {
     WebDriver driver;
 
-    public OrderAddressPage(WebDriver driver) {
+    public OrderSummaryPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(name="processAddress")
+    @FindBy(linkText = "Proceed to checkout")
     WebElement ProceedToCheckout;
 
     public void clickProceedToCheckout() {

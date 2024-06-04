@@ -1,6 +1,7 @@
 package TestCases;
 
 import PageObject.*;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -20,10 +21,10 @@ public class TC_MyAccountPage extends BaseClass {
 
         RegistrationPage registrationPage = new RegistrationPage(driver);
         registrationPage.selectMr();
-        registrationPage.enterFirstName("Namush");
+        registrationPage.enterFirstName("Anshul");
         registrationPage.enterLastName("Sharma");
         registrationPage.selectMr();
-        registrationPage.enterPassword("123456");
+        registrationPage.enterPassword("ansh1234");
         registrationPage.clickRegister();
         logger.info("Entered registration details");
         logger.info("Clicked on register");
@@ -32,10 +33,11 @@ public class TC_MyAccountPage extends BaseClass {
         Assert.assertEquals(userAccountPage.getUserAccount(), "Namush Sharma", "User account name is not matching");
 
         logger.info("Verified user account name");
+        userAccountPage.clickSignOut();
 
     }
 
-    @Test(testName = "VerifyLogin" ,enabled = false )
+    @Test(testName = "VerifyLogin")
     public void verifyLogin() throws IOException {
         logger.info("***************TestCase Verify Login starts*****************");
         MyAccountPage myAccountPage = new MyAccountPage(driver);
@@ -68,7 +70,6 @@ public class TC_MyAccountPage extends BaseClass {
     }
 
 
-
     @Test(testName = "verifyLogout ")
     public void verifyLogout() throws IOException {
         logger.info("Entered LogoutTest");
@@ -99,37 +100,5 @@ public class TC_MyAccountPage extends BaseClass {
         }
 
     }
-
-    @Test(testName = "AddFirstAddressTest", enabled = false, dependsOnMethods = "verifyLogin")
-    public void verifyAddFirstAddress() throws IOException {
-        logger.info("Entered AddFirstAddressTest");
-        UserAccountPage userAccountPage = new UserAccountPage(driver);
-        userAccountPage.addFirstAddress();
-        logger.info("Clicked on add first address");
-        AddressPage addressPage = new AddressPage(driver);
-        addressPage.enterFirstName("Namish");
-        addressPage.enterLastName("Sharma");
-        addressPage.enterAddress("123 Main St");
-        addressPage.enterCity("Delhi");
-        addressPage.enterState("Delhi");
-        addressPage.enterCountry("Alabama");
-        addressPage.enterZipCode("12345");
-        addressPage.enterPhone("1234567890");
-        addressPage.enterMobile("1234567890");
-        addressPage.enterAddressAlias("Home");
-        addressPage.clickSaveAddress();
-        logger.info("Entered address details and Clicked on save address");
-
-        if (driver.getTitle().equals("Addresses")) {
-            logger.info("AddFirstAddressTest passed");
-            Assert.assertTrue(true);
-        } else {
-            logger.info("AddFirstAddressTest failed");
-            captureScreenShot(driver, "AddFirstAddressTest");
-            Assert.fail();
-        }
-
-    }
-
 
 }

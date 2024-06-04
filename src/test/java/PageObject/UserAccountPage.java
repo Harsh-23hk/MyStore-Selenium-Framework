@@ -17,13 +17,19 @@ public class UserAccountPage {
     @FindBy(xpath = "//a[@title='View my customer account']")
     WebElement userAccount;
 
-    @FindBy(className = "logout")
+    @FindBy(xpath = "//a[@class='logout']")
     WebElement SIGN_OUT;
 
-    @FindBy(xpath = "//a[@title='Add my first address']")
+    @FindBy(xpath = "//span[@xpath='1']")
     WebElement ADD_ADDRESS;
 
 
+
+    @FindBy(xpath = "//button[@class='btn btn-default button-search']")
+    WebElement SearchButton;
+
+    @FindBy(xpath = "//input[@id='search_query_top']")
+    WebElement SearchBox;
 
 
     public String getUserAccount() {
@@ -36,5 +42,12 @@ public class UserAccountPage {
 
     public void clickSignOut() {
         SIGN_OUT.click();
+    }
+
+    public void clickSearchButton(){
+        SearchButton.submit();
+    }
+    public void enterDataInSearchBox(String search){
+        SearchBox.sendKeys(search);
     }
 }

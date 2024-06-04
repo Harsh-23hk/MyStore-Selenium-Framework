@@ -30,6 +30,9 @@ public class BaseClass {
     public String baseURL = readConfig.getBaseUrl();
     public String browser = readConfig.getBrowser();
 
+    public String emailAddress = readConfig.getEmail() ;
+    String password = readConfig.getPassword();
+
     public static WebDriver driver;
     public static Logger logger;
 

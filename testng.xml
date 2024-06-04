@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="My Account" verbose="8" thread-count="5" parallel="tests">
+<suite name="My Account" verbose="8" thread-count="4">
     <listeners>
         <listener class-name="Utilities.ExtentListener"/>
     </listeners>
@@ -8,7 +8,9 @@
             name="TC_MyAccountPage">
         <classes>
             <class name="TestCases.TC_MyAccountPage"/>
+            <class name="TestCases.TC_VerifyLoginWithDataDriven"/>
+            <class name="TestCases.TC_VerifyLogin"/>
+            <class name="TestCases.TC_ProductSearch"/>
         </classes>
     </test>
-
 </suite>
